@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const App: FC = () => {
+function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">a</header>
     </div>
   );
-};
+}
 
 export default App;
