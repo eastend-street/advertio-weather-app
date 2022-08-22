@@ -34,6 +34,9 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'implicit-arrow-linebreak': 'off',
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
   },
   settings: {
     'import/resolver': {
