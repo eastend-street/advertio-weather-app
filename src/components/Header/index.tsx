@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { HeaderContainer, Title } from './styles';
 
-const Header = () => (
+const Header: FC = () => (
   <HeaderContainer>
-    <Title>Weather App</Title>
+    <Title>Weather app</Title>
   </HeaderContainer>
 );
 

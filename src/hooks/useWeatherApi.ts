@@ -15,6 +15,7 @@ const fetcher = () =>
     params: {
       appid: process.env.REACT_APP_WEATHER_API_KEY,
       q: 'lisbon',
+      units: 'metric',
     },
   }).then((res: AxiosResponse<WeatherData>) => res);
 

@@ -5,5 +5,3 @@ export const HomeContainer = styled.div`
   margin: 1rem auto;
   max-width: ${({ theme }) => theme.contentMaxWidth};
 `;
-
-export const aa = styled.div;
