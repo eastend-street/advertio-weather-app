@@ -1,15 +1,26 @@
 import React, { FC } from 'react';
 
-import useWeatherApi from '../../hooks/useWeatherApi';
 import Temperature from './Temperature';
+import CityDropdown from './CityDropdown';
+
+import useWeatherApi from './hooks/useWeatherApi';
+
 import { HomeContainer } from './styles';
 
 const Home: FC = () => {
-  const { data } = useWeatherApi();
+  const { data, selectedCity, handleSelectCity } = useWeatherApi();
 
   return (
     <HomeContainer>
-      {data && <Temperature temperature={data.main.temp} />}
+      {data && (
+        <>
+          <CityDropdown
+            selectedCity={selectedCity}
+            onSelectCity={handleSelectCity}
+          />
+          <Temperature temperature={data.main.temp} />
+        </>
+      )}
     </HomeContainer>
   );
 };
