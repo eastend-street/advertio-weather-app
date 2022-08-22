@@ -38,7 +38,8 @@ module.exports = {
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     camelcase: 'off',
-    '@typescript-eslint/naming-convention': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-default-export': 'off',
   },
   settings: {
     'import/resolver': {
