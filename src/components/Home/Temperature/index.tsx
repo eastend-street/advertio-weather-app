@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { TemperatureContainer } from './styles';
+import { TemperatureContainer, StyledTemperature } from './styles';
 
 interface TemperatureProps {
   temperature: number;
@@ -9,8 +9,8 @@ interface TemperatureProps {
 
 const Temperature: FC<TemperatureProps> = ({ temperature, isFahrenheit }) => (
   <TemperatureContainer>
-    <span>{Math.round(temperature)}</span>
-    {isFahrenheit ? <span>&#8457;</span> : <span>&#8451;</span>}
+    <StyledTemperature>{Math.round(temperature)}</StyledTemperature>
+    <span>{isFahrenheit ? 'ºF' : 'ºC'}</span>
   </TemperatureContainer>
 );
 

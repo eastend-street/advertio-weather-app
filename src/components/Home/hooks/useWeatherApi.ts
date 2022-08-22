@@ -37,7 +37,7 @@ const fetcher = ({
 
 const useWeatherApi: UseWeatherApi = () => {
   const [selectedCity, setSelectedCity] = useState<City>(CITIES[0]);
-  const [isFahrenheit, setIsFahrenheit] = useState(true);
+  const [isFahrenheit, setIsFahrenheit] = useState(false);
   const { data: response, error } = useSWR<
     AxiosResponse<WeatherData>,
     AxiosError<Error>

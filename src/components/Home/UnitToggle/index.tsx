@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 
-import { UnitToggleContainer, ToggleSwitch, ToggleSwitchInput } from './styles';
+import {
+  UnitToggleContainer,
+  ToggleSwitch,
+  ToggleSwitchInput,
+  UnitName,
+} from './styles';
 
 interface UnitToggleProps {
   isFahrenheit: boolean;
@@ -9,6 +14,7 @@ interface UnitToggleProps {
 
 const UnitToggle: FC<UnitToggleProps> = ({ isFahrenheit, onToggle }) => (
   <UnitToggleContainer>
+    <UnitName>ºC</UnitName>
     <ToggleSwitch checked={isFahrenheit} onClick={onToggle}>
       <ToggleSwitchInput
         type="checkbox"
@@ -16,6 +22,7 @@ const UnitToggle: FC<UnitToggleProps> = ({ isFahrenheit, onToggle }) => (
         onChange={() => {}}
       />
     </ToggleSwitch>
+    <UnitName>ºF</UnitName>
   </UnitToggleContainer>
 );
 

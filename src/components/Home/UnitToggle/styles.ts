@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 
-export const UnitToggleContainer = styled.div``;
+export const UnitToggleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const UnitName = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes.size2};
+`;
 
 export const ToggleSwitch = styled.div<{ checked: boolean }>`
   --switch-size: 1.5rem;
   position: relative;
   width: calc(var(--switch-size) * 2);
   height: var(--switch-size);
+  margin: 0 0.5rem;
   cursor: pointer;
 
   &::before {

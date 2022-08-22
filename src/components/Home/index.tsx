@@ -6,7 +6,7 @@ import UnitToggle from './UnitToggle';
 
 import useWeatherApi from './hooks/useWeatherApi';
 
-import { HomeContainer } from './styles';
+import { HomeContainer, ActionWrapper } from './styles';
 
 const Home: FC = () => {
   const {
@@ -21,11 +21,16 @@ const Home: FC = () => {
     <HomeContainer>
       {data && (
         <>
-          <CityDropdown
-            selectedCity={selectedCity}
-            onSelectCity={handleSelectCity}
-          />
-          <UnitToggle isFahrenheit={isFahrenheit} onToggle={handleSwitchUnit} />
+          <ActionWrapper>
+            <CityDropdown
+              selectedCity={selectedCity}
+              onSelectCity={handleSelectCity}
+            />
+            <UnitToggle
+              isFahrenheit={isFahrenheit}
+              onToggle={handleSwitchUnit}
+            />
+          </ActionWrapper>
           <Temperature
             temperature={data.main.temp}
             isFahrenheit={isFahrenheit}
