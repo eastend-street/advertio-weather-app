@@ -21,7 +21,9 @@ const theme = {
   contentMaxWidth: '1024px',
 };
 
-export const Theme: FC = ({ children }) => (
+export type ThemeType = typeof theme;
+
+const Theme: FC = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 
