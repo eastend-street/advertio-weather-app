@@ -6,6 +6,7 @@ const theme = {
     white: '#ffffff',
     shadeCyan: '#577e8d',
     darkShadeCyan: '#3f5b65',
+    orange: '#ff643f',
   },
   fonts: ['Roboto', 'sans-serif'],
   fontSizes: {

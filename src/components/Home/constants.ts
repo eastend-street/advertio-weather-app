@@ -1,4 +1,6 @@
-export const CITIES = [
+import { City, TemperatureUnit } from './types';
+
+export const CITIES: City[] = [
   {
     id: 1,
     name: 'lisbon',

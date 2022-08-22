@@ -4,12 +4,13 @@ import { TemperatureContainer } from './styles';
 
 interface TemperatureProps {
   temperature: number;
+  isFahrenheit: boolean;
 }
 
-const Temperature: FC<TemperatureProps> = ({ temperature }) => (
+const Temperature: FC<TemperatureProps> = ({ temperature, isFahrenheit }) => (
   <TemperatureContainer>
     <span>{Math.round(temperature)}</span>
-    <span>&#8451;</span>
+    {isFahrenheit ? <span>&#8457;</span> : <span>&#8451;</span>}
   </TemperatureContainer>
 );
 
