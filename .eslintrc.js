@@ -37,6 +37,8 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': 'off',
+    camelcase: 'off',
+    '@typescript-eslint/naming-convention': 'off',
   },
   settings: {
     'import/resolver': {
