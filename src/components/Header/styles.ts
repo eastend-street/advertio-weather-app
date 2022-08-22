@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #3f5b65;
+  background-color: ${(props) => props.theme.colors.darkShadeCyan};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Title = styled.h1`
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.white};
+  font-weight: ${(props) => props.theme.fontWeight.regular};
   margin: 0;
 `;
