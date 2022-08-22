@@ -11,27 +11,42 @@ type UseWeatherApi = () => {
   data: WeatherData | undefined;
   error: AxiosError<Error> | undefined;
   selectedCity: City;
+  isFahrenheit: boolean;
   handleSelectCity: (e: ChangeEvent<HTMLSelectElement>) => void;
+  handleSwitchUnit: () => void;
 };
 
-const fetcher = ({ url, selectedCity }: { url: string; selectedCity: City }) =>
+const fetcher = ({
+  url,
+  selectedCity,
+  units,
+}: {
+  url: string;
+  selectedCity: City;
+  units: 'imperial' | 'metric';
+}) =>
   axios({
     method: 'GET',
     url,
     params: {
       appid: process.env.REACT_APP_WEATHER_API_KEY,
       q: selectedCity.name,
-      units: 'metric',
+      units,
     },
   }).then((res: AxiosResponse<WeatherData>) => res);
 
 const useWeatherApi: UseWeatherApi = () => {
   const [selectedCity, setSelectedCity] = useState<City>(CITIES[0]);
+  const [isFahrenheit, setIsFahrenheit] = useState(false);
   const { data: response, error } = useSWR<
     AxiosResponse<WeatherData>,
     AxiosError<Error>
   >(
-    { url: 'https://api.openweathermap.org/data/2.5/weather', selectedCity },
+    {
+      url: 'https://api.openweathermap.org/data/2.5/weather',
+      selectedCity,
+      units: isFahrenheit ? 'imperial' : 'metric',
+    },
     fetcher
   );
 
@@ -42,11 +57,17 @@ const useWeatherApi: UseWeatherApi = () => {
     );
   };
 
+  const handleSwitchUnit = () => {
+    setIsFahrenheit((prevState) => !prevState);
+  };
+
   return {
     data: response && response.data,
     error,
     selectedCity,
+    isFahrenheit,
     handleSelectCity,
+    handleSwitchUnit,
   };
 };
 

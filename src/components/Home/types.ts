@@ -3,3 +3,7 @@ export interface City {
   name: string;
   label: string;
 }
+
+export interface TemperatureUnit {
+  value: 'metric' | 'imperial';
+}
