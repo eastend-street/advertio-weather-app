@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import Temperature from './Temperature';
 import CityDropdown from './CityDropdown';
 import UnitToggle from './UnitToggle';
+import WeatherIcon from './WeatherIcon';
 
 import useWeatherApi from './hooks/useWeatherApi';
 
@@ -35,6 +36,7 @@ const Home: FC = () => {
             temperature={data.main.temp}
             isFahrenheit={isFahrenheit}
           />
+          <WeatherIcon weatherArray={data.weather} />
         </>
       )}
     </HomeContainer>
