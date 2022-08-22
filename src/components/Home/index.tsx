@@ -4,6 +4,7 @@ import Temperature from './Temperature';
 import CityDropdown from './CityDropdown';
 import UnitToggle from './UnitToggle';
 import WeatherIcon from './WeatherIcon';
+import SunriseSunsetInfo from './SunriseSunsetInfo';
 
 import useWeatherApi from './hooks/useWeatherApi';
 
@@ -37,6 +38,11 @@ const Home: FC = () => {
             isFahrenheit={isFahrenheit}
           />
           <WeatherIcon weatherArray={data.weather} />
+          <SunriseSunsetInfo
+            sunrise={data.sys.sunrise}
+            sunset={data.sys.sunset}
+            selectedCity={selectedCity}
+          />
         </>
       )}
     </HomeContainer>
