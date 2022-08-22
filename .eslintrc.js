@@ -1,51 +1,37 @@
 module.exports = {
+  extends: [
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['react', '@typescript-eslint', 'jest', 'import'],
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: 'module',
+    project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-    'import/extensions': [
+    'linebreak-style': 'off',
+    'prettier/prettier': [
       'error',
-      'ignorePackages',
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
+        endOfLine: 'auto',
       },
     ],
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
-    'react/function-component-definition': [
-      2,
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
-    'implicit-arrow-linebreak': 'off',
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': 'off',
-    camelcase: 'off',
-    'import/prefer-default-export': 'off',
-    'import/no-default-export': 'off',
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
   },
 };
