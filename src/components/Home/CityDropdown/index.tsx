@@ -14,7 +14,7 @@ const CityDropdown: FC<CityDropdownProps> = ({
   onSelectCity,
 }) => (
   <CityDropdownContainer>
-    <CitySelect value={selectedCity.name} onChange={onSelectCity}>
+    <CitySelect value={selectedCity.id} onChange={onSelectCity}>
       {CITIES.map((city) => (
         <CityOption key={city.name} value={city.id}>
           {city.label}

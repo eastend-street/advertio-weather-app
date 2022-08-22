@@ -21,18 +21,15 @@ const Home: FC = () => {
 
   return (
     <HomeContainer>
+      <ActionWrapper>
+        <CityDropdown
+          selectedCity={selectedCity}
+          onSelectCity={handleSelectCity}
+        />
+        <UnitToggle isFahrenheit={isFahrenheit} onToggle={handleSwitchUnit} />
+      </ActionWrapper>
       {data && (
         <>
-          <ActionWrapper>
-            <CityDropdown
-              selectedCity={selectedCity}
-              onSelectCity={handleSelectCity}
-            />
-            <UnitToggle
-              isFahrenheit={isFahrenheit}
-              onToggle={handleSwitchUnit}
-            />
-          </ActionWrapper>
           <Temperature
             temperature={data.main.temp}
             isFahrenheit={isFahrenheit}
