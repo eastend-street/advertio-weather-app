@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -12,7 +17,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'import/extensions': [
@@ -42,9 +47,15 @@ module.exports = {
     'import/no-default-export': 'off',
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
+      typescript: {
+        project: ['tsconfig.json', 'package/tsconfig.json'],
+      },
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        project: ['tsconfig.json', 'package/tsconfig.json'],
       },
     },
   },
