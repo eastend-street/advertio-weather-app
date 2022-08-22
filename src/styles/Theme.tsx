@@ -12,6 +12,7 @@ const theme = {
     small: '1rem',
     medium: '2rem',
     large: '3rem',
+    XLarge: '4rem',
   },
   fontWeight: {
     regular: 400,
