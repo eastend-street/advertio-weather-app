@@ -17,17 +17,15 @@ type UseWeatherApi = () => {
 };
 
 const fetcher = ({
-  url,
   selectedCity,
   units,
 }: {
-  url: string;
   selectedCity: City;
   units: 'imperial' | 'metric';
 }) =>
   axios({
     method: 'GET',
-    url,
+    url: 'https://api.openweathermap.org/data/2.5/weather',
     params: {
       appid: process.env.REACT_APP_WEATHER_API_KEY,
       q: selectedCity.name,
@@ -43,7 +41,6 @@ const useWeatherApi: UseWeatherApi = () => {
     AxiosError<Error>
   >(
     {
-      url: 'https://api.openweathermap.org/data/2.5/weather',
       selectedCity,
       units: isFahrenheit ? 'imperial' : 'metric',
     },

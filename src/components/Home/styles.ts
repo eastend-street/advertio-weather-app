@@ -11,4 +11,5 @@ export const ActionWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 1.5rem 0 4rem;
 `;
