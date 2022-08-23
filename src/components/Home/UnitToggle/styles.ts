@@ -44,6 +44,7 @@ export const ToggleSwitch = styled.div<{ checked: boolean }>`
     background: ${({ theme }) => theme.colors.orange};
     box-shadow: 0 3px 12px -4px rgba(0, 0, 0, 0.3);
     transition: 0.2s ease-out;
+    box-shadow: ${({ theme }) => theme.shadow.base};
   }
 `;
 

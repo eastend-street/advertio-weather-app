@@ -31,6 +31,9 @@ const theme = {
     bold: 700,
   },
   contentMaxWidth: '400px',
+  shadow: {
+    base: '0px 6px 6px -2px rgb(0, 0, 0, 0.4)',
+  },
 };
 
 export type ThemeType = typeof theme;

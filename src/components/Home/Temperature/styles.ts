@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const TemperatureContainer = styled.p`
-  font-size: 4rem;
+  font-size: 5rem;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   text-align: center;
   margin: 1rem auto;
 `;

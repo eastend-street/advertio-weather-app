@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CityDropdownContainer = styled.div`
   position: relative;
   width: 9rem;
+  box-shadow: ${({ theme }) => theme.shadow.base};
 `;
 
 export const CityButton = styled.button`
@@ -34,6 +35,7 @@ export const CityList = styled.ul`
   background-color: ${({ theme }) => theme.colors.white};
   margin: 0;
   padding: 0;
+  box-shadow: ${({ theme }) => theme.shadow.base};
 `;
 
 export const CityItem = styled.li`

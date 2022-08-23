@@ -5,11 +5,13 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
+  box-shadow: ${({ theme }) => theme.shadow.base};
 `;
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.size5};
   font-weight: ${({ theme }) => theme.fontWeight.regular};
+  color: ${({ theme }) => theme.colors.white};
   margin: 0;
 `;
