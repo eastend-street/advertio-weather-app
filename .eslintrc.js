@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   plugins: ['react', '@typescript-eslint', 'jest', 'import'],
   env: {
@@ -31,6 +32,13 @@ module.exports = {
       'error',
       {
         endOfLine: 'auto',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
+        peerDependencies: true,
       },
     ],
   },
