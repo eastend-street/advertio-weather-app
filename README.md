@@ -41,6 +41,11 @@ REACT_APP_WEATHER_API_KEY=YOUR_API_KEY_HERE
 npm start
 ```
 
+*Storybook
+```
+npm run storybook
+```
+
 
 ## Project structure
 
@@ -86,5 +91,5 @@ Since some of components are using diffrent HTML tags rather than the correct HT
 
 
 ## More improvements to do
-- Stories for Home component with Mock Service Worker
+- Stories and unit tests for Home component with Mock Service Worker
 - Intergration testing using Cypress
