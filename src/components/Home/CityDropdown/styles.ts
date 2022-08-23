@@ -9,6 +9,7 @@ export const CityDropdownContainer = styled.div`
 export const CityButton = styled.button`
   width: 100%;
   font-size: ${({ theme }) => theme.fontSizes.size2};
+  color: ${({ theme }) => theme.colors.black};
   background-color: ${({ theme }) => theme.colors.white};
   outline: none;
   border: none;
