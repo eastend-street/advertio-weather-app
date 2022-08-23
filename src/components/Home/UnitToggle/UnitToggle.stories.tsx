@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { within, userEvent, screen } from '@storybook/testing-library';
 
 import UnitToggle from '.';
 
@@ -15,3 +16,8 @@ const Template: ComponentStory<typeof UnitToggle> = () => {
 };
 
 export const Default = Template.bind({});
+
+export const SelectFahrenheit = Template.bind({});
+SelectFahrenheit.play = async ({ canvasElement }) => {
+  await userEvent.click(within(canvasElement).getByRole('checkbox'));
+};
