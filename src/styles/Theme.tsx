@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-const theme = {
+export const theme = {
   colors: {
     white: '#ffffff',
     black: '#000000',
