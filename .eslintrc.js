@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   plugins: ['react', '@typescript-eslint', 'jest', 'import'],
   env: {
