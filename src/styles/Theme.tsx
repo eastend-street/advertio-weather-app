@@ -4,10 +4,12 @@ import { ThemeProvider } from 'styled-components';
 const theme = {
   colors: {
     white: '#ffffff',
+    black: '#000000',
     shadeCyan: '#577e8d',
     darkShadeCyan: '#3f5b65',
     orange: '#ff643f',
     grey: '#777777',
+    lightGrey: '#e6e6e6',
   },
   fonts: ['Roboto', 'sans-serif'],
   fontSizes: {
@@ -29,6 +31,9 @@ const theme = {
     bold: 700,
   },
   contentMaxWidth: '400px',
+  shadow: {
+    base: '0px 6px 6px -2px rgb(0, 0, 0, 0.4)',
+  },
 };
 
 export type ThemeType = typeof theme;
