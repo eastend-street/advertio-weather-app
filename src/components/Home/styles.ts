@@ -13,3 +13,13 @@ export const ActionWrapper = styled.div`
   justify-content: space-between;
   margin: 1.5rem 0 4rem;
 `;
+
+export const ErrorMessage = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.size4};
+  text-align: center;
+`;
+
+export const LoadingMessage = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.size4};
+  text-align: center;
+`;

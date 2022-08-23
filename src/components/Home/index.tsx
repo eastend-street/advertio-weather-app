@@ -8,11 +8,17 @@ import SunriseSunsetInfo from './SunriseSunsetInfo';
 
 import useWeatherApi from './hooks/useWeatherApi';
 
-import { HomeContainer, ActionWrapper } from './styles';
+import {
+  HomeContainer,
+  ActionWrapper,
+  ErrorMessage,
+  LoadingMessage,
+} from './styles';
 
 const Home: FC = () => {
   const {
     data,
+    error,
     selectedCity,
     isFahrenheit,
     handleSelectCity,
@@ -28,7 +34,11 @@ const Home: FC = () => {
         />
         <UnitToggle isFahrenheit={isFahrenheit} onToggle={handleSwitchUnit} />
       </ActionWrapper>
-      {data && (
+      {error ? (
+        <ErrorMessage role="alert">
+          Failed to load. Please try again.
+        </ErrorMessage>
+      ) : data ? (
         <>
           <Temperature
             temperature={data.main.temp}
@@ -41,6 +51,8 @@ const Home: FC = () => {
             selectedCity={selectedCity}
           />
         </>
+      ) : (
+        <LoadingMessage>Loading...</LoadingMessage>
       )}
     </HomeContainer>
   );
