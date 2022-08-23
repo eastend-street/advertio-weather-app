@@ -2,18 +2,18 @@ import { City } from './types';
 
 export const CITIES: City[] = [
   {
-    name: 'lisbon',
     label: 'Lisbon',
+    value: 'lisbon',
     timezone: 'Europe/Lisbon',
   },
   {
-    name: 'new york',
     label: 'New York',
+    value: 'new york',
     timezone: 'America/New_York',
   },
   {
-    name: 'london',
     label: 'London',
+    value: 'london',
     timezone: 'Europe/London',
   },
 ];

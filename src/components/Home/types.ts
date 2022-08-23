@@ -1,5 +1,5 @@
 export interface City {
-  name: string;
   label: string;
+  value: string;
   timezone: string;
 }

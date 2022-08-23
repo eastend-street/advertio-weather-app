@@ -11,7 +11,7 @@ import {
 
 interface CityDropdownProps {
   selectedCity: City;
-  onSelectCity: (cityName: City['name']) => void;
+  onSelectCity: (cityValue: City['value']) => void;
 }
 
 const CityDropdown: FC<CityDropdownProps> = ({
@@ -20,8 +20,8 @@ const CityDropdown: FC<CityDropdownProps> = ({
 }) => {
   const [showList, setShowList] = useState(false);
 
-  const handleOnSelect = (cityName: City['name']) => {
-    onSelectCity(cityName);
+  const handleOnSelect = (cityValue: City['value']) => {
+    onSelectCity(cityValue);
     setShowList(false);
   };
 
@@ -30,11 +30,14 @@ const CityDropdown: FC<CityDropdownProps> = ({
       onMouseEnter={() => setShowList(true)}
       onMouseLeave={() => setShowList(false)}
     >
-      <CityButton value={selectedCity.name}>{selectedCity.label}</CityButton>
+      <CityButton value={selectedCity.value}>{selectedCity.label}</CityButton>
       {showList && (
         <CityList>
           {CITIES.map((city) => (
-            <CityItem key={city.name} onClick={() => handleOnSelect(city.name)}>
+            <CityItem
+              key={city.value}
+              onClick={() => handleOnSelect(city.value)}
+            >
               {city.label}
             </CityItem>
           ))}

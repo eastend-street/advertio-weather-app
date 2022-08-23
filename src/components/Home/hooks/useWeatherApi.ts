@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import useSWR from 'swr';
 import axios, { AxiosResponse, AxiosError } from 'axios';
 
@@ -12,7 +12,7 @@ type UseWeatherApi = () => {
   error: AxiosError<Error> | undefined;
   selectedCity: City;
   isFahrenheit: boolean;
-  handleSelectCity: (cityName: City['name']) => void;
+  handleSelectCity: (cityValue: City['value']) => void;
   handleSwitchUnit: () => void;
 };
 
@@ -28,7 +28,7 @@ const fetcher = ({
     url: 'https://api.openweathermap.org/data/2.5/weather',
     params: {
       appid: process.env.REACT_APP_WEATHER_API_KEY,
-      q: selectedCity.name,
+      q: selectedCity.value,
       units,
     },
   }).then((res: AxiosResponse<WeatherData>) => res);
@@ -47,8 +47,10 @@ const useWeatherApi: UseWeatherApi = () => {
     fetcher
   );
 
-  const handleSelectCity = (cityName: City['name']) => {
-    setSelectedCity(CITIES.find((city) => city.name === cityName) || CITIES[0]);
+  const handleSelectCity = (cityValue: City['value']) => {
+    setSelectedCity(
+      CITIES.find((city) => city.value === cityValue) || CITIES[0]
+    );
   };
 
   const handleSwitchUnit = () => {
