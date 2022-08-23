@@ -29,6 +29,7 @@ const CityDropdown: FC<CityDropdownProps> = ({
     <CityDropdownContainer
       onMouseEnter={() => setShowList(true)}
       onMouseLeave={() => setShowList(false)}
+      data-testid="city-dropdown-container"
     >
       <CityButton value={selectedCity.value}>{selectedCity.label}</CityButton>
       {showList && (
@@ -37,6 +38,7 @@ const CityDropdown: FC<CityDropdownProps> = ({
             <CityItem
               key={city.value}
               onClick={() => handleOnSelect(city.value)}
+              role="option"
             >
               {city.label}
             </CityItem>
