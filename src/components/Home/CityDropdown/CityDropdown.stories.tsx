@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { within, userEvent } from '@storybook/testing-library';
 
 import CityDropdown from '.';
 
@@ -22,3 +23,18 @@ const Template: ComponentStory<typeof CityDropdown> = () => {
 };
 
 export const Default = Template.bind({});
+
+export const Hover = Template.bind({});
+Hover.play = async ({ canvasElement }) => {
+  await userEvent.hover(
+    within(canvasElement).getByTestId('city-dropdown-container')
+  );
+};
+
+export const SelectFromDropDown = Template.bind({});
+SelectFromDropDown.play = async ({ canvasElement }) => {
+  await userEvent.hover(
+    within(canvasElement).getByTestId('city-dropdown-container')
+  );
+  await userEvent.click(within(canvasElement).getByText('New York'));
+};

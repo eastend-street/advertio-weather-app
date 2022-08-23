@@ -15,9 +15,17 @@ interface UnitToggleProps {
 const UnitToggle: FC<UnitToggleProps> = ({ isFahrenheit, onToggle }) => (
   <UnitToggleContainer>
     <UnitName>&#176;C</UnitName>
-    <ToggleSwitch checked={isFahrenheit} onClick={onToggle}>
+    <ToggleSwitch
+      role="checkbox"
+      tabIndex={0}
+      aria-checked={isFahrenheit}
+      checked={isFahrenheit}
+      onClick={onToggle}
+      aria-label="degree toggle"
+    >
       <ToggleSwitchInput
         type="checkbox"
+        name="isFahrenheit"
         checked={isFahrenheit}
         onChange={() => {}}
       />
