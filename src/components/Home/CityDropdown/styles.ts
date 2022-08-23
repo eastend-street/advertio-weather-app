@@ -2,6 +2,19 @@ import styled from 'styled-components';
 
 export const CityDropdownContainer = styled.div`
   position: relative;
+  width: 9rem;
+`;
+
+export const CityButton = styled.button`
+  width: 100%;
+  font-size: ${({ theme }) => theme.fontSizes.size2};
+  background-color: ${({ theme }) => theme.colors.white};
+  outline: none;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  padding: 0.7rem;
+
   &::before {
     content: '';
     position: absolute;
@@ -14,15 +27,22 @@ export const CityDropdownContainer = styled.div`
   }
 `;
 
-export const CitySelect = styled.select`
-  width: 9rem;
-  font-size: ${({ theme }) => theme.fontSizes.size2};
-  padding: 0.7rem;
-  outline: none;
-  border: none;
-  border-radius: 0;
-  appearance: none;
-  cursor: pointer;
+export const CityList = styled.ul`
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.white};
+  margin: 0;
+  padding: 0;
 `;
 
-export const CityOption = styled.option``;
+export const CityItem = styled.li`
+  color: ${({ theme }) => theme.colors.black};
+  padding: 0.7rem 0.5rem;
+  max-width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.lightGrey};
+  }
+`;

@@ -1,27 +1,47 @@
-import React, { FC, ChangeEvent } from 'react';
+import React, { FC, useState } from 'react';
 
 import { CITIES } from '../constants';
 import { City } from '../types';
-import { CityDropdownContainer, CitySelect, CityOption } from './styles';
+import {
+  CityDropdownContainer,
+  CityButton,
+  CityList,
+  CityItem,
+} from './styles';
 
 interface CityDropdownProps {
   selectedCity: City;
-  onSelectCity: (e: ChangeEvent<HTMLSelectElement>) => void;
+  onSelectCity: (cityName: City['name']) => void;
 }
 
 const CityDropdown: FC<CityDropdownProps> = ({
   selectedCity,
   onSelectCity,
-}) => (
-  <CityDropdownContainer>
-    <CitySelect value={selectedCity.id} onChange={onSelectCity}>
-      {CITIES.map((city) => (
-        <CityOption key={city.name} value={city.id}>
-          {city.label}
-        </CityOption>
-      ))}
-    </CitySelect>
-  </CityDropdownContainer>
-);
+}) => {
+  const [showList, setShowList] = useState(false);
+
+  const handleOnSelect = (cityName: City['name']) => {
+    onSelectCity(cityName);
+    setShowList(false);
+  };
+
+  return (
+    <CityDropdownContainer
+      onMouseEnter={() => setShowList(true)}
+      onMouseLeave={() => setShowList(false)}
+    >
+      <CityButton value={selectedCity.name}>{selectedCity.label}</CityButton>
+      {showList && (
+        <CityList>
+          {CITIES.map((city) => (
+            <CityItem key={city.name} onClick={() => handleOnSelect(city.name)}>
+              {city.label}
+            </CityItem>
+          ))}
+        </CityList>
+      )}
+    </CityDropdownContainer>
+  );
+};
 
 export default CityDropdown;

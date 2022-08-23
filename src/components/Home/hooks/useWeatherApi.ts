@@ -12,7 +12,7 @@ type UseWeatherApi = () => {
   error: AxiosError<Error> | undefined;
   selectedCity: City;
   isFahrenheit: boolean;
-  handleSelectCity: (e: ChangeEvent<HTMLSelectElement>) => void;
+  handleSelectCity: (cityName: City['name']) => void;
   handleSwitchUnit: () => void;
 };
 
@@ -47,11 +47,8 @@ const useWeatherApi: UseWeatherApi = () => {
     fetcher
   );
 
-  const handleSelectCity = (e: ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    setSelectedCity(
-      CITIES.find((city) => city.id === Number(value)) || CITIES[0]
-    );
+  const handleSelectCity = (cityName: City['name']) => {
+    setSelectedCity(CITIES.find((city) => city.name === cityName) || CITIES[0]);
   };
 
   const handleSwitchUnit = () => {

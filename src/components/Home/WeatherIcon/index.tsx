@@ -11,6 +11,7 @@ const WeatherIcon: FC<WeatherIconProps> = ({ weatherArray }) => (
   <WeatherIconContainer>
     {weatherArray.map((weather) => (
       <WeatherImage
+        key={weather.id}
         src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
         alt={weather.description}
       />
