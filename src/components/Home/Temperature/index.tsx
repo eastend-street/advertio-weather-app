@@ -7,9 +7,13 @@ interface TemperatureProps {
 }
 
 const Temperature: FC<TemperatureProps> = ({ temperature, isFahrenheit }) => (
-  <TemperatureContainer>
+  <TemperatureContainer aria-label="temperature">
     <StyledTemperature>{Math.round(temperature)}</StyledTemperature>
-    {isFahrenheit ? <span>&#176;F</span> : <span>&#176;C</span>}
+    {isFahrenheit ? (
+      <span aria-label="fahrenheit">&#176;F</span>
+    ) : (
+      <span aria-label="celsius">&#176;C</span>
+    )}
   </TemperatureContainer>
 );
 
