@@ -34,5 +34,12 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
+        peerDependencies: true,
+      },
+    ],
   },
 };
